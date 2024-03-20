@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da802505af15a64f7997f07fb88c0f48",
+    "content-hash": "1642b6a6056efd5dc2580eadb52afbf7",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4567,6 +4567,76 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "roots/wordpress-no-content",
+            "version": "6.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/WordPress.git",
+                "reference": "6.4.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/release/wordpress-6.4.3-no-content.zip",
+                "shasum": "4138c6337bf524159b406d5b27916deebb0f78df"
+            },
+            "require": {
+                "php": ">= 7.0.0"
+            },
+            "provide": {
+                "wordpress/core-implementation": "6.4.3"
+            },
+            "suggest": {
+                "ext-curl": "Performs remote request operations.",
+                "ext-dom": "Used to validate Text Widget content and to automatically configuring IIS7+.",
+                "ext-exif": "Works with metadata stored in images.",
+                "ext-fileinfo": "Used to detect mimetype of file uploads.",
+                "ext-hash": "Used for hashing, including passwords and update packages.",
+                "ext-imagick": "Provides better image quality for media uploads.",
+                "ext-json": "Used for communications with other servers.",
+                "ext-libsodium": "Validates Signatures and provides securely random bytes.",
+                "ext-mbstring": "Used to properly handle UTF8 text.",
+                "ext-mysqli": "Connects to MySQL for database interactions.",
+                "ext-openssl": "Permits SSL-based connections to other hosts.",
+                "ext-pcre": "Increases performance of pattern matching in code searches.",
+                "ext-xml": "Used for XML parsing, such as from a third-party site.",
+                "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
+            },
+            "type": "wordpress-core",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "https://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
+            "homepage": "https://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "support": {
+                "docs": "https://developer.wordpress.org/",
+                "forum": "https://wordpress.org/support/",
+                "irc": "irc://irc.freenode.net/wordpress",
+                "issues": "https://core.trac.wordpress.org/",
+                "rss": "https://wordpress.org/news/feed/",
+                "source": "https://core.trac.wordpress.org/browser",
+                "wiki": "https://codex.wordpress.org/"
+            },
+            "funding": [
+                {
+                    "url": "https://wordpressfoundation.org/donate/",
+                    "type": "other"
+                }
+            ],
+            "time": "2024-01-30T19:32:01+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",

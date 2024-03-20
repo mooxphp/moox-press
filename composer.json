@@ -11,7 +11,8 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "moox/core": "^1.0"
+        "moox/core": "^1.0",
+        "roots/wordpress-no-content": "^6.4"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
