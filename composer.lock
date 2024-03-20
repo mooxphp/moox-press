@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff3379547c6ac696c91a03f9915a16a3",
+    "content-hash": "8e31afaa707d4373fa1159e43c0c28fa",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4615,7 +4615,7 @@
             "time": "2023-11-08T05:53:05+00:00"
         },
         {
-            "name": "roots/wordpress-no-content",
+            "name": "roots/wordpress-full",
             "version": "6.4.3",
             "source": {
                 "type": "git",
@@ -4624,8 +4624,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.4.3-no-content.zip",
-                "shasum": "4138c6337bf524159b406d5b27916deebb0f78df"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.4.3.zip",
+                "shasum": "a89484e6c0c36e391808cf5d556070796db59b6d"
             },
             "require": {
                 "php": ">= 7.0.0"
@@ -4682,7 +4682,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-01-30T19:32:01+00:00"
+            "time": "2024-01-30T19:31:55+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
