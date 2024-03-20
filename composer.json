@@ -35,7 +35,7 @@
         "phpstan/phpstan": "^1.10",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^10.8",
+        "phpunit/phpunit": "^10.0",
         "spatie/laravel-ignition": "^2.4",
         "spatie/laravel-ray": "^1.33"
     },
@@ -80,7 +80,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         }
     },
     "minimum-stability": "dev",
