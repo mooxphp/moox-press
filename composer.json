@@ -6,13 +6,20 @@
         "laravel",
         "framework"
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "moox/core": "^1.0",
-        "roots/wordpress-no-content": "^6.4"
+        "roots/wordpress-no-content": "^6.4",
+        "moox/press": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -67,6 +74,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

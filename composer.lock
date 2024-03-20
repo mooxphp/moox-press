@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1642b6a6056efd5dc2580eadb52afbf7",
+    "content-hash": "652c915237522236edf12274e39dd2d3",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1798,16 +1798,16 @@
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
-            "version": "3.5.1",
+            "version": "3.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirschbaum-development/eloquent-power-joins.git",
-                "reference": "571f09c4b23c349cb1a5db8bb88af291ed30389c"
+                "reference": "2fae3aca9eefd4591603a7e53406ab9f56b69fad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/571f09c4b23c349cb1a5db8bb88af291ed30389c",
-                "reference": "571f09c4b23c349cb1a5db8bb88af291ed30389c",
+                "url": "https://api.github.com/repos/kirschbaum-development/eloquent-power-joins/zipball/2fae3aca9eefd4591603a7e53406ab9f56b69fad",
+                "reference": "2fae3aca9eefd4591603a7e53406ab9f56b69fad",
                 "shasum": ""
             },
             "require": {
@@ -1854,9 +1854,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirschbaum-development/eloquent-power-joins/issues",
-                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.5.1"
+                "source": "https://github.com/kirschbaum-development/eloquent-power-joins/tree/3.5.2"
             },
-            "time": "2024-03-19T22:45:47+00:00"
+            "time": "2024-03-20T10:23:27+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3208,6 +3208,52 @@
                 }
             ],
             "time": "2024-03-14T23:02:48+00:00"
+        },
+        {
+            "name": "moox/press",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/press",
+                "reference": "1ec8020e2617d66bf74001d539ea30e57d858443"
+            },
+            "require": {
+                "moox/core": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Moox\\Press\\PressServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Moox\\Press\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Moox Developer",
+                    "email": "dev@moox.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is my package press",
+            "homepage": "https://moox.org/",
+            "keywords": [
+                "Filament",
+                "Filament plugin",
+                "Laravel",
+                "Laravel package"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -9967,7 +10013,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
