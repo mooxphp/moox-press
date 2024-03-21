@@ -8,6 +8,8 @@ parameters:
         - app
     excludePaths:
         - 'packages/*/vendor/*'
+    bootstrapFiles:
+        - phpstan-bootstrap.php
     ignoreErrors:
         -
             messages:
