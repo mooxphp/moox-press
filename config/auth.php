@@ -61,7 +61,7 @@ return [
 
     'providers' => [
         'wpusers' => [
-            'driver' => 'wpuser-provider',
+            'driver' => 'eloquent',
             'model' => \Moox\Press\Models\WpUser::class,
         ],
 
