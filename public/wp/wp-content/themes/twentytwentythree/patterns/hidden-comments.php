@@ -10,7 +10,7 @@
 	<!-- wp:comments -->
 	<div class="wp-block-comments">
 		<!-- wp:heading {"level":2} -->
-		<h2><?php echo esc_html_x( 'Comments', 'Title of comments section', 'twentytwentythree' ); ?></h2>
+		<h2><?php echo esc_html_x('Comments', 'Title of comments section', 'twentytwentythree'); ?></h2>
 		<!-- /wp:heading -->
 
 		<!-- wp:comments-title {"level":3} /-->
