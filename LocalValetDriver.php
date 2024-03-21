@@ -18,11 +18,6 @@ class LocalValetDriver extends LaravelValetDriver
     public function frontControllerPath(string $sitePath, string $siteName, string $uri): string
     {
 
-        // WordPress admin or includes
-        if (preg_match('#/wp/(wp-admin|wp-includes)#', $uri)) {
-            return $sitePath.'/public/wp/index.php';
-        }
-
         if (str_contains($uri, '/wp')) {
             // Handle WordPress front-end
             return $sitePath.'/public/wp/index.php';
