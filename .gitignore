@@ -20,7 +20,6 @@ yarn-error.log
 
 # Moox Press
 /public/vendor/*
-/public/wp
 /storage/app/wp-uploads
 /storage/app/wp-languages
 /public/wp/*
