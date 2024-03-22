@@ -15,20 +15,26 @@ class LocalValetDriver extends LaravelValetDriver
     /**
      * Get the fully resolved path to the application's front controller.
      */
-    public function frontControllerPath(string $sitePath, string $siteName, string $uri): string
+    public function frontControllerPath(string $sitePath, string $siteName, string $uri): ?string
     {
-        // WordPress admin or includes
-        if (preg_match('#/wp/(wp-admin|wp-includes)#', $uri)) {
+        if (str_contains($uri, '/wp/') || str_ends_with($uri, '/wp')) {
+
+            if (str_contains($uri, '/wp-admin')) {
+
+                if (str_ends_with($uri, '/wp-admin/') || str_ends_with($uri, '/wp-admin') || str_ends_with($uri, '/wp-admin/index.php')) {
+                    return $sitePath.'/public/wp/wp-admin/index.php';
+                }
+
+                return $sitePath.'/public'.$uri;
+            }
+
+            if (str_contains($uri, 'wp-login.php')) {
+                return $sitePath.'/public/wp/wp-login.php';
+            }
+
             return $sitePath.'/public/wp/index.php';
         }
 
-        if (str_contains($uri, '/wp')) {
-            // Handle WordPress front-end
-            return $sitePath.'/public/wp/index.php';
-        }
-
-        // Fallback to Laravel's front controller
-        return parent::frontControllerPath($sitePath, $siteName, $uri);
-
+        return $sitePath.'/public/index.php';
     }
 }

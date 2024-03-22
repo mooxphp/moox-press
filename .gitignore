@@ -26,6 +26,7 @@ yarn-error.log
 /public/wp/*
 /public/wp/wp-admin/*
 !/public/wp/wp-content/
+/public/wp/wp-content/uploads
 /public/wp/wp-includes/*
 
 /packages/press/vendor
