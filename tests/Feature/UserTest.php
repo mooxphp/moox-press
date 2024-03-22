@@ -3,11 +3,11 @@
 use Moox\Press\Models\WpUser;
 use Moox\Press\Resources\WpUserResource;
 
-beforeEach(function(){
+beforeEach(function () {
     $this->user = WPUser::factory()->create();
 });
 
-afterEach(function(){
+afterEach(function () {
     $this->user->delete();
 });
 
@@ -18,13 +18,10 @@ test('Database has User', function () {
     ]);
 });
 
-it('can login', function(){
+it('can login', function () {
     $this->actingAs($this->user)->get('/admin')->assertSuccessful();
 });
 
-it('can get WpUserResource', function(){
+it('can get WpUserResource', function () {
     $this->actingAs($this->user)->get(WPUserResource::getUrl('index'))->assertSuccessful();
 });
-
-
-

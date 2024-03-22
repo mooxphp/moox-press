@@ -8,6 +8,6 @@ it('can render login page', function () {
 
 });
 
-it('will redirect to login', function(){
+it('will redirect to login', function () {
     $this->get('admin')->assertRedirect('admin/login');
 });

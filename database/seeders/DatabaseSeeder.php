@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Moox\Press\Models\WpUser;
 use Illuminate\Database\Seeder;
+use Moox\Press\Models\WpUser;
 
 class DatabaseSeeder extends Seeder
 {
