@@ -19,10 +19,14 @@ yarn-error.log
 /.vscode
 
 # Moox Press
-/public/vendor
+/public/vendor/*
+/public/wp
 /storage/app/wp-uploads
 /storage/app/wp-languages
 /public/wp/*
 /public/wp/wp-admin/*
 !/public/wp/wp-content/
 /public/wp/wp-includes/*
+
+/packages/press/vendor
+build/phpstan
