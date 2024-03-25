@@ -25,3 +25,7 @@ it('can login', function () {
 it('can get WpUserResource', function () {
     $this->actingAs($this->user)->get(WPUserResource::getUrl('index'))->assertSuccessful();
 });
+
+it('cant get WpUserResource', function () {
+    $this->get(WPUserResource::getUrl('index'))->assertRedirect('admin/login');
+});
