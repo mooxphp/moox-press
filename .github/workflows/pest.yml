@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      # Add other steps here...
+
       - name: Prepare .env file
         run: |
           cp .env.example .env
@@ -55,4 +55,6 @@ jobs:
           echo "DB_HOST=127.0.0.1" >> .env
           echo "DB_USERNAME=user" >> .env
           echo "DB_PASSWORD=password" >> .env
-      # Continue with your existing steps...
+
+      - name: Execute tests
+        run: vendor/bin/pest --coverage-clover clover.xml
