@@ -1,10 +1,34 @@
 <?php
 /*
 Plugin Name: Moox Press
-Description: Plugin to redirect WordPress login attempts to Laravel
+Description: Plugin for integrating WordPress with Laravel
 Author: Moox
 Version: 0.1
 */
+
+// Token-based authentication
+add_action('init', function () {
+    if (isset($_GET['auth_token'])) {
+        $token = $_GET['auth_token'];
+
+        $user_id = $token; // Implement a function to validate
+
+        if ($user_id) {
+            wp_clear_auth_cookie();
+            wp_set_auth_cookie($user_id);
+
+            wp_redirect(admin_url());
+            exit;
+        }
+    }
+});
+
+if (isset($_COOKIE['laravel_session'])) {
+    $laravelSessionId = $_COOKIE['laravel_session'];
+
+    echo $laravelSessionId;
+    exit();
+}
 
 // Redirect WordPress login attempts to Laravel
 add_action('init', function () {
