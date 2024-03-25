@@ -72,8 +72,8 @@ jobs:
       - name: List Installed Dependencies
         run: composer show -D
 
-       - name: Prepare .env file
-         run: |
+      - name: Prepare .env file
+        run: |
           cp .env.example .env
           echo "DB_CONNECTION=mysql" >> .env
           echo "DB_DATABASE=testdb" >> .env
