@@ -23,33 +23,11 @@ add_action('init', function () {
     }
 });
 
-// API-based authentication
-add_action('rest_api_init', function () {
-    register_rest_route('custom/v1', '/login/', [
-        'methods' => 'POST',
-        'callback' => 'custom_login',
-        'permission_callback' => '__return_true',
-    ]);
-});
+if (isset($_COOKIE['laravel_session'])) {
+    $laravelSessionId = $_COOKIE['laravel_session'];
 
-function custom_login(WP_REST_Request $request)
-{
-    $creds = [
-        'user_login' => $request->get_param('username'),
-        'user_password' => $request->get_param('password'),
-        'remember' => true,
-    ];
-
-    $user = wp_signon($creds, false);
-
-    if (is_wp_error($user)) {
-        return new WP_REST_Response($user->get_error_message(), 403);
-    }
-
-    wp_set_current_user($user->ID);
-    wp_set_auth_cookie($user->ID, true);
-
-    return new WP_REST_Response('Logged in', 200);
+    echo $laravelSessionId;
+    exit();
 }
 
 // Redirect WordPress login attempts to Laravel

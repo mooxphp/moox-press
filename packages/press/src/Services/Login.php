@@ -72,11 +72,12 @@ class Login extends BaseAuth
         }
 
         $response = Http::post('https://'.$_SERVER['SERVER_NAME'].'/wp/wp-json/custom/v1/login/', [
-            'username' => $user->user_login,
-            'password' => $user->user_pass,
+            'username' => $data['login'],
+            'password' => $data['password'],
+            'remember' => $data['remember'],
         ]);
 
-        dd($response->json());
+        //dd($response->json());
 
         Auth::login($user, $data['remember'] ?? false);
 
