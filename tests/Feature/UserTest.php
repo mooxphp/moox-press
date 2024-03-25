@@ -6,8 +6,11 @@ use Moox\Press\Models\WpUser;
 use Moox\Press\Resources\WpUserResource;
 
 beforeEach(function () {
-    if (! Schema::hasTable('wp_users')) {
-        $sqlFilePath = 'moox-press.sql';
+    $wpPrefix = config('press.wordpress_prefix');
+    $this->table = $wpPrefix.'users';
+
+    if (! Schema::hasTable($this->table)) {
+        $sqlFilePath = 'wp_full.sql';
         $sql = file_get_contents($sqlFilePath);
         DB::unprepared($sql);
     }
@@ -19,7 +22,7 @@ afterEach(function () {
 });
 
 test('Database has User', function () {
-    $this->assertDatabaseHas('wp_users', [
+    $this->assertDatabaseHas($this->table, [
         'user_email' => $this->user->email,
         'user_pass' => $this->user->password,
     ]);
