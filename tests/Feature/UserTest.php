@@ -1,12 +1,12 @@
 <?php
 
-use Moox\Press\Models\WpUser;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Moox\Press\Models\WpUser;
 use Moox\Press\Resources\WpUserResource;
 
 beforeEach(function () {
-    if(!Schema::hasTable('wp_users')){
+    if (! Schema::hasTable('wp_users')) {
         $sqlFilePath = 'wp_full.sql';
         $sql = file_get_contents($sqlFilePath);
         DB::unprepared($sql);
