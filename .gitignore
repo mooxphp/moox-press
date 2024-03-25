@@ -27,6 +27,6 @@ yarn-error.log
 !/public/wp/wp-content/
 /public/wp/wp-content/uploads
 /public/wp/wp-includes/*
-
+/public/wp/wp-content/languages
 /packages/press/vendor
 build/phpstan
