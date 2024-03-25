@@ -6,8 +6,8 @@ use Moox\Press\Models\WpUser;
 use Moox\Press\Resources\WpUserResource;
 
 beforeEach(function () {
-    if (! Schema::hasTable('wp_users')) {
-        $sqlFilePath = 'wp_full.sql';
+    if(!Schema::hasTable('wp_users')){
+        $sqlFilePath = 'moox-press.sql';
         $sql = file_get_contents($sqlFilePath);
         DB::unprepared($sql);
     }
