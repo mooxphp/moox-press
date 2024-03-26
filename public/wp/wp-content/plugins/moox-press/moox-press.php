@@ -23,12 +23,16 @@ add_action('init', function () {
     }
 });
 
-if (isset($_COOKIE['laravel_session'])) {
-    $laravelSessionId = $_COOKIE['laravel_session'];
+// After WordPress logout, redirect to Laravel logout
+add_action('init', function () {
+    $url = strtok($_SERVER['REQUEST_URI'], '?');
 
-    echo $laravelSessionId;
-    exit();
-}
+    if (str_ends_with($url, 'wp-login.php') && $_GET['action'] === 'logout') {
+        wp_logout();
+        wp_redirect('https://'.$_SERVER['SERVER_NAME'].'/admin/logout');
+        exit;
+    }
+});
 
 // Redirect WordPress login attempts to Laravel
 add_action('init', function () {
