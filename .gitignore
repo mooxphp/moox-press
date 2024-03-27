@@ -24,6 +24,7 @@ yarn-error.log
 /storage/app/wp-uploads
 /storage/app/wp-languages
 /public/wp/*
+!/public/wp/wp-config.php
 /public/wp/wp-admin/*
 !/public/wp/wp-content/
 /public/wp/wp-content/uploads
