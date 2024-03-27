@@ -6,7 +6,6 @@ Author: Moox
 Version: 0.1
 */
 
-// Get config
 if (defined('MOOX_HASH')) {
     $mooxHash = MOOX_HASH;
 }
@@ -15,29 +14,11 @@ if (defined('LOCK_WP')) {
     $lockWp = LOCK_WP;
 }
 
-if (defined('HIDE_LOGIN')) {
-    $hideLogin = HIDE_LOGIN;
-}
-
-if (defined('FORGOT_PASSWORD')) {
-    $forgotPassword = FORGOT_PASSWORD;
-}
-
-if (defined('ENABLE_MFA')) {
-    $enableMfa = ENABLE_MFA;
-}
-
-if (defined('REGISTRATION')) {
-    $registration = REGISTRATION;
-}
-
-if (defined('WP_DEBUG')) {
-    $wpDebug = WP_DEBUG;
-}
-
 function moox_lock_wp_frontend()
 {
-    if (defined('LOCK_WP') && LOCK_WP) {
+    global $lockWp;
+
+    if ($lockWp === 'true') {
         if (! is_user_logged_in() && $GLOBALS['pagenow'] !== 'wp-login.php') {
             auth_redirect();
         }
