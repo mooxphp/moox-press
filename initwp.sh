@@ -1,7 +1,10 @@
 #!/bin/sh
 
-cd public
+cd public/wp
+mv wp-config.php ../wp-config.php
+mv wp-content ../wp-content
+cd ..
 composer install
-cd wp
-ln -s ../wp-config.php wp-config.php
-ln -s ../wp-content wp-content
+mv wp-config.php wp/wp-config.php
+mv wp-content wp/wp-content
+cd ..

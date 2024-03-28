@@ -52,7 +52,7 @@ cp LocalValetDriver.mac.php LocalValetDriver.php
 # Install Laravel
 composer install
 
-# Install WordPress
+# Install WordPress (use initwp.bat for Windows)
 ./initwp.sh
 
 # Import mooxwp.sql to your DB
