@@ -49,17 +49,19 @@ cp .env.example .env
 # Using Laravel Valet or Herd (use .win.php for Windows)
 cp LocalValetDriver.mac.php LocalValetDriver.php
 
-# Install Laravel via Composer
+# Install Laravel
 composer install
 
-# Install WordPress via Composer
-cd public
-composer install
+# Install WordPress
 ./initwp.sh
 
-# Migrate and seed
+# Import mooxwp.sql to your DB
+mysql -u root -p moox-press < moox-press.sql
+
+# Alternatively do a bunch of commands and run the WordPress web installer
+php artisan mooxjobs:install
+php artisan make:session-table
 php artisan migrate:fresh --seed
-## Option: instead of using the WordPress Installer to create the needed DB-tables, you can import the wp_full.sql file in project root to simulate a freshly installed WordPress.
 
 # Use Vite (for Laravel Sail on Windows: do it in Ubuntu, not inside the Sail container)
 npm install
