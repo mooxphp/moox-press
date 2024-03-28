@@ -72,3 +72,20 @@ npm run dev
 Afterwards you can login using:
 - User: sysadm
 - Pass: aUkAqKMBgdkoy3tshMGZ
+
+## Deployment
+
+For deployment with Laravel Forge (or on Nginx otherwise) add the location /wp/ part and replace the /wp/ with your intended subfolder:
+
+```
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    
+    location /wp/ {
+        try_files $uri $uri/ /wp/index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+```
