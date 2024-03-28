@@ -19,6 +19,7 @@ yarn-error.log
 /.vscode
 /build
 composer.lock
+LocalValetDriver.php
 
 # Moox Press
 /public/vendor/*
