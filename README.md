@@ -70,5 +70,5 @@ npm run dev
 ```
 
 Afterwards you can login using:
-User: sysadm
-Pass: aUkAqKMBgdkoy3tshMGZ
+- User: sysadm
+- Pass: aUkAqKMBgdkoy3tshMGZ
