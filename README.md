@@ -51,6 +51,7 @@ cp LocalValetDriver.mac.php LocalValetDriver.php
 
 # Install Laravel
 composer install
+php artisan key:generate
 
 # Install WordPress (use initwp.bat for Windows)
 ./initwp.sh
