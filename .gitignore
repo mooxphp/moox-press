@@ -28,7 +28,7 @@ LocalValetDriver.php
 /public/wp/*
 !/public/wp/wp-config.php
 /public/wp/wp-admin/*
-!/public/wp/wp-content/
+/public/wp/wp-config.php
 /public/wp/wp-content/uploads
 /public/wp/wp-includes/*
 /public/wp/wp-content/languages

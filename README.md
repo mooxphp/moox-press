@@ -4,7 +4,6 @@
     <br>
 </p><br>
 
-
 <p align="center">
     <a href="https://github.com/mooxphp/moox-press/actions/workflows/pest.yml"><img alt="PEST Tests" src="https://github.com/mooxphp/moox/actions/workflows/pest.yml/badge.svg"></a>
     <a href="https://github.com/mooxphp/moox-press/actions/workflows/pint.yml"><img alt="Laravel PINT PHP Code Style" src="https://github.com/mooxphp/moox/actions/workflows/pint.yml/badge.svg"></a>
@@ -31,14 +30,13 @@
     <br>
 </p>
 
-
 # Moox Press Monorepo
 
 Welcome to the Moox project. This is the Moox Press Monorepo. It is an installable Laravel App meant for development of our Filament Plugins aka Laravel Packages to connect with WordPress. We are in an early stage of development ...
 
 ## Packages
 
-- Moox Press - early stage, do not try to use!
+-   Moox Press - early stage, do not try to use!
 
 ## Installation
 
@@ -48,20 +46,22 @@ The Laravel dev app in the root-folder of the Moox Monorepo is made for instant 
 # Create a .env file and adjust to your needs
 cp .env.example .env
 
-# Install via Composer
+# Using Laravel Valet or Herd (use .win.php for Windows)
+cp LocalValetDriver.mac.php LocalValetDriver.php
+
+# Install Laravel via Composer
 composer install
+
+# Install WordPress via Composer
+cd public
+composer install
+./initwp.sh
 
 # Migrate and seed
 php artisan migrate:fresh --seed
 ## Option: instead of using the WordPress Installer to create the needed DB-tables, you can import the wp_full.sql file in project root to simulate a freshly installed WordPress.
 
-# Symlink WordPress (creates all necessary folders and files, mostly as symlinks, mostly gitignored)
-./symlink.sh
-
 # Use Vite (for Laravel Sail on Windows: do it in Ubuntu, not inside the Sail container)
 npm install
 npm run dev
 ```
-
-## 
-
