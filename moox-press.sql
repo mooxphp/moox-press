@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: moox-press
--- Generation Time: 2024-03-28 09:20:36.7910
+-- Generation Time: 2024-03-28 11:54:28.1560
 -- -------------------------------------------------------------
 
 
@@ -176,7 +176,7 @@ CREATE TABLE `jku8u_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 DROP TABLE IF EXISTS `jku8u_posts`;
 CREATE TABLE `jku8u_posts` (
@@ -208,7 +208,7 @@ CREATE TABLE `jku8u_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 DROP TABLE IF EXISTS `jku8u_term_relationships`;
 CREATE TABLE `jku8u_term_relationships` (
@@ -553,7 +553,7 @@ INSERT INTO `jku8u_options` (`option_id`, `option_name`, `option_value`, `autolo
 (206, '_transient_health-check-site-status-result', '{\"good\":\"18\",\"recommended\":\"6\",\"critical\":\"1\"}', 'yes'),
 (211, '_site_transient_timeout_php_check_7f423e167c7e7e0a82fea1a6d5318f5f', '1711708936', 'no'),
 (212, '_site_transient_php_check_7f423e167c7e7e0a82fea1a6d5318f5f', 'a:5:{s:19:\"recommended_version\";s:3:\"7.4\";s:15:\"minimum_version\";s:3:\"7.0\";s:12:\"is_supported\";b:1;s:9:\"is_secure\";b:1;s:13:\"is_acceptable\";b:1;}', 'no'),
-(213, '_transient_doing_cron', '1711613938.2258369922637939453125', 'yes'),
+(213, '_transient_doing_cron', '1711623160.1490550041198730468750', 'yes'),
 (214, '_site_transient_timeout_browser_dd78878bebc0e6afff80be96516511d7', '1711717080', 'no'),
 (215, '_site_transient_browser_dd78878bebc0e6afff80be96516511d7', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:9:\"122.0.0.0\";s:8:\"platform\";s:9:\"Macintosh\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
 (216, '_site_transient_timeout_browser_885db7f85041cc22315969cfd5c40676', '1711717699', 'no'),
@@ -600,11 +600,11 @@ INSERT INTO `jku8u_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VA
 (4, 7, '_edit_lock', '1711141777:1'),
 (5, 8, '_edit_lock', '1711141791:1'),
 (6, 9, '_edit_lock', '1711141795:1'),
-(7, 10, '_wp_attached_file', '2024/03/Alf-Agenturbild.jpg'),
-(8, 10, '_wp_attachment_metadata', 'a:6:{s:5:\"width\";i:800;s:6:\"height\";i:800;s:4:\"file\";s:27:\"2024/03/Alf-Agenturbild.jpg\";s:8:\"filesize\";i:55452;s:5:\"sizes\";a:3:{s:6:\"medium\";a:5:{s:4:\"file\";s:27:\"Alf-Agenturbild-300x300.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:300;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:15631;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:27:\"Alf-Agenturbild-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:6145;}s:12:\"medium_large\";a:5:{s:4:\"file\";s:27:\"Alf-Agenturbild-768x768.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:768;s:9:\"mime-type\";s:10:\"image/jpeg\";s:8:\"filesize\";i:63852;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
 (9, 2, '_edit_lock', '1711142345:1'),
 (10, 1, '_pingme', '1'),
-(11, 1, '_encloseme', '1');
+(11, 1, '_encloseme', '1'),
+(12, 12, '_wp_attached_file', '2024/03/moox-logo.png'),
+(13, 12, '_wp_attachment_metadata', 'a:6:{s:5:\"width\";i:800;s:6:\"height\";i:200;s:4:\"file\";s:21:\"2024/03/moox-logo.png\";s:8:\"filesize\";i:130437;s:5:\"sizes\";a:3:{s:6:\"medium\";a:5:{s:4:\"file\";s:20:\"moox-logo-300x75.png\";s:5:\"width\";i:300;s:6:\"height\";i:75;s:9:\"mime-type\";s:9:\"image/png\";s:8:\"filesize\";i:29040;}s:9:\"thumbnail\";a:5:{s:4:\"file\";s:21:\"moox-logo-150x150.png\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:9:\"image/png\";s:8:\"filesize\";i:23344;}s:12:\"medium_large\";a:5:{s:4:\"file\";s:21:\"moox-logo-768x192.png\";s:5:\"width\";i:768;s:6:\"height\";i:192;s:9:\"mime-type\";s:9:\"image/png\";s:8:\"filesize\";i:119862;}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}');
 
 INSERT INTO `jku8u_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (1, 1, '2024-03-20 13:27:35', '2024-03-20 13:27:35', '<!-- wp:paragraph -->\n<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n<!-- /wp:paragraph -->', 'Hello worlds!', '', 'publish', 'open', 'open', '', 'hello-world', '', '', '2024-03-25 08:17:25', '2024-03-25 08:17:25', '', 0, 'http://emptywp.moox.org/?p=1', 0, 'post', '', 1),
@@ -616,8 +616,8 @@ INSERT INTO `jku8u_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `p
 (7, 1, '2024-03-22 21:09:37', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2024-03-22 21:09:37', '0000-00-00 00:00:00', '', 0, 'https://moox-press.test/wp/?p=7', 0, 'post', '', 0),
 (8, 1, '2024-03-22 21:09:51', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2024-03-22 21:09:51', '0000-00-00 00:00:00', '', 0, 'https://moox-press.test/wp/?p=8', 0, 'post', '', 0),
 (9, 1, '2024-03-22 21:09:55', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2024-03-22 21:09:55', '0000-00-00 00:00:00', '', 0, 'https://moox-press.test/wp/?p=9', 0, 'post', '', 0),
-(10, 1, '2024-03-22 21:11:46', '2024-03-22 21:11:46', '', 'Alf-Agenturbild', '', 'inherit', 'open', 'closed', '', 'alf-agenturbild', '', '', '2024-03-22 21:11:46', '2024-03-22 21:11:46', '', 0, 'https://moox-press.test/wp/wp-content/uploads/2024/03/Alf-Agenturbild.jpg', 0, 'attachment', 'image/jpeg', 0),
-(11, 1, '2024-03-25 08:17:25', '2024-03-25 08:17:25', '<!-- wp:paragraph -->\n<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n<!-- /wp:paragraph -->', 'Hello worlds!', '', 'inherit', 'closed', 'closed', '', '1-revision-v1', '', '', '2024-03-25 08:17:25', '2024-03-25 08:17:25', '', 1, 'https://moox-press.test/wp/?p=11', 0, 'revision', '', 0);
+(11, 1, '2024-03-25 08:17:25', '2024-03-25 08:17:25', '<!-- wp:paragraph -->\n<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n<!-- /wp:paragraph -->', 'Hello worlds!', '', 'inherit', 'closed', 'closed', '', '1-revision-v1', '', '', '2024-03-25 08:17:25', '2024-03-25 08:17:25', '', 1, 'https://moox-press.test/wp/?p=11', 0, 'revision', '', 0),
+(12, 1, '2024-03-28 10:42:25', '2024-03-28 10:42:25', '', 'moox-logo', '', 'inherit', 'open', 'closed', '', 'moox-logo', '', '', '2024-03-28 10:42:25', '2024-03-28 10:42:25', '', 0, 'https://moox-press.test/wp/wp-content/uploads/2024/03/moox-logo.png', 0, 'attachment', 'image/png', 0);
 
 INSERT INTO `jku8u_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
 (1, 1, 0),
