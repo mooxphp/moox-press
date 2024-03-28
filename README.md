@@ -68,3 +68,7 @@ php artisan migrate:fresh --seed
 npm install
 npm run dev
 ```
+
+Afterwards you can login using:
+User: sysadm
+Pass: aUkAqKMBgdkoy3tshMGZ
