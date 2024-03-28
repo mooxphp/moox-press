@@ -18,6 +18,7 @@ yarn-error.log
 /.idea
 /.vscode
 /build
+LocalValetDriver.php
 
 # Moox Press
 /public/vendor/*
