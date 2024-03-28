@@ -7,4 +7,6 @@ cd ..
 composer install
 mv wp-config.php wp/wp-config.php
 mv wp-content wp/wp-content
-cd ..
+cd wp/wp-content
+mv demo-uploads uploads
+cd ../../..
