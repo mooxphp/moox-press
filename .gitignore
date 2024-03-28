@@ -18,6 +18,7 @@ yarn-error.log
 /.idea
 /.vscode
 /build
+composer.lock
 
 # Moox Press
 /public/vendor/*
