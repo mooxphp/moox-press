@@ -57,6 +57,12 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 \Moox\Press\WpUserPlugin::make(),
+                \Moox\Press\WpPostPlugin::make(),
+                \Moox\Press\WpMediaPlugin::make(),
+                \Moox\Press\WpPagePlugin::make(),
+                \Moox\Press\WpPostMetaPlugin::make(),
+                \Moox\Press\WpUserMetaPlugin::make(),
+                \Moox\Press\WpOptionPlugin::make(),
             ]);
     }
 }
