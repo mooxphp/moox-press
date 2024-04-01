@@ -18,7 +18,8 @@
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "moox/core": "^1.0",
-        "moox/press": "*"
+        "moox/press": "*",
+        "moox/expiry": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
