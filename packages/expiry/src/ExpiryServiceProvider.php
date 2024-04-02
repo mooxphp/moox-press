@@ -27,15 +27,15 @@ class ExpiryServiceProvider extends PackageServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../database/migrations/01_create_expiry_monitors_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_01_create_expiry_monitors_table.php'),
-            ], 'expiry-monitors-migration');
+            ], 'expiry-migrations');
 
             $this->publishes([
                 __DIR__.'/../database/migrations/02_create_expiries_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_02_create_expiries_table.php'),
-            ], 'expiries-migration');
+            ], 'expiry-migrations');
 
             $this->publishes([
                 __DIR__.'/../database/migrations/03_add_foreigns_to_expiries_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_04_add_foreigns_to_expiries_table.php'),
-            ], 'expiries-foreigns-migration');
+            ], 'expiry-migrations');
         }
     }
 }

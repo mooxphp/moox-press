@@ -63,7 +63,8 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Press\WpPostMetaPlugin::make(),
                 \Moox\Press\WpUserMetaPlugin::make(),
                 \Moox\Press\WpOptionPlugin::make(),
-                //\Moox\Expiry\ExpiryPlugin::make(),
+                \Moox\Expiry\ExpiryPlugin::make(),
+                \Moox\Expiry\ExpiryMonitorPlugin::make(),
             ]);
     }
 }
