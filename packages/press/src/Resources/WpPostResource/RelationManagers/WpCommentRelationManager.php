@@ -183,64 +183,63 @@ class WpCommentRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-        ->poll('60s')
-        ->columns([
-            Tables\Columns\TextColumn::make('comment_post_ID')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_author')
-                ->toggleable()
-                ->searchable()
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_author_email')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_author_url')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_author_IP')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_date')
-                ->toggleable()
-                ->dateTime(),
-            Tables\Columns\TextColumn::make('comment_date_gmt')
-                ->toggleable()
-                ->dateTime(),
-            Tables\Columns\TextColumn::make('comment_content')
-                ->toggleable()
-                ->searchable()
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_karma')
-                ->toggleable()
-                ->searchable(true, null, true),
-            Tables\Columns\TextColumn::make('comment_approved')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_agent')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_type')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('comment_parent')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-            Tables\Columns\TextColumn::make('user_id')
-                ->toggleable()
-                ->searchable(true, null, true)
-                ->limit(50),
-        ])
-        ->actions([ViewAction::make(), EditAction::make()])
-        ->bulkActions([DeleteBulkAction::make()]);
+            ->poll('60s')
+            ->columns([
+                Tables\Columns\TextColumn::make('comment_post_ID')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_author')
+                    ->toggleable()
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_author_email')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_author_url')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_author_IP')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_date')
+                    ->toggleable()
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('comment_date_gmt')
+                    ->toggleable()
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('comment_content')
+                    ->toggleable()
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_karma')
+                    ->toggleable()
+                    ->searchable(true, null, true),
+                Tables\Columns\TextColumn::make('comment_approved')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_agent')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_type')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('comment_parent')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('user_id')
+                    ->toggleable()
+                    ->searchable(true, null, true)
+                    ->limit(50),
+            ])
+            ->actions([ViewAction::make(), EditAction::make()])
+            ->bulkActions([DeleteBulkAction::make()]);
     }
-
 }
