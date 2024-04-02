@@ -63,11 +63,11 @@ class WpPost extends Model
 
     public function meta()
     {
-        return $this->hasMany(\Moox\Press\Models\WpPostMeta::class, 'post_id', 'ID');
+        return $this->hasMany(WpPostMeta::class, 'post_id', 'ID');
     }
 
     public function author()
     {
-        return $this->belongsTo(\App\Models\User::class, 'post_author', 'ID'); // Adjust User model path as needed
+        return $this->belongsTo(WpUser::class, 'post_author', 'ID'); // Adjust User model path as needed
     }
 }
