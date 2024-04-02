@@ -28,15 +28,18 @@ define('NONCE_SALT', $_ENV['WP_NONCE_SALT']);
 
 define('MOOX_HASH', $_ENV['APP_KEY']);
 
-define('LOCK_WP', $_ENV['LOCK_WP']);
-define('HIDE_LOGIN', $_ENV['HIDE_LOGIN']);
-define('FORGOT_PASSWORD', $_ENV['FORGOT_PASSWORD']);
-define('ENABLE_MFA', $_ENV['ENABLE_MFA']);
-define('REGISTRATION', $_ENV['REGISTRATION']);
+define('LOCK_WP', isset($_ENV['LOCK_WP']) ? $_ENV['LOCK_WP'] : false);
+define('HIDE_LOGIN', isset($_ENV['HIDE_LOGIN']) ? $_ENV['HIDE_LOGIN'] : false);
+define('FORGOT_PASSWORD', isset($_ENV['FORGOT_PASSWORD']) ? $_ENV['FORGOT_PASSWORD'] : false);
+define('ENABLE_MFA', isset($_ENV['ENABLE_MFA']) ? $_ENV['ENABLE_MFA'] : false);
+define('REGISTRATION', isset($_ENV['REGISTRATION']) ? $_ENV['REGISTRATION'] : false);
+define('REDIRECT_EDITOR', isset($_ENV['REDIRECT_EDITOR']) ? $_ENV['REDIRECT_EDITOR'] : false);
 
-$table_prefix = $_ENV['WP_PREFIX'];
+$table_prefix = isset($_ENV['WP_PREFIX']) ? $_ENV['WP_PREFIX'] : 'wp_';
 
-define('WP_DEBUG', $_ENV['WP_DEBUG']);
+$wp_debug = isset($_ENV['WP_DEBUG']) ? $_ENV['WP_DEBUG'] : false;
+
+define('WP_DEBUG', $wp_debug);
 
 if (! defined('ABSPATH')) {
     define('ABSPATH', __DIR__.'/');

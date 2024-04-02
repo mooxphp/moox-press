@@ -1,10 +1,18 @@
 (function updateBackLinkAndLogo() {
-    const backLink = document.querySelector(
-        '.edit-post-fullscreen-mode-close[href*="edit.php?post_type=post"]'
-    );
+    const backLink = document.querySelector(".edit-post-fullscreen-mode-close");
+    const postType = getQueryParam("post_type");
 
     if (backLink) {
-        backLink.href = "/admin/wp-posts";
+        let backLinkUrl = getFallbackUrl(postType);
+        const referrer = document.referrer;
+        const isInternalReferrer =
+            referrer && new URL(referrer).hostname === window.location.hostname;
+
+        if (isInternalReferrer) {
+            backLinkUrl = referrer;
+        }
+
+        backLink.href = backLinkUrl;
         backLink.setAttribute("aria-label", "Back to Moox");
         backLink.title = "Back to Moox";
 
@@ -47,6 +55,15 @@
        </svg>`;
         backLink.innerHTML = logoSVG + backLink.innerHTML;
     } else {
-        setTimeout(updateBackLinkAndLogo, 500);
+        setTimeout(updateBackLinkAndLogo, 100);
     }
 })();
+
+function getFallbackUrl(postType) {
+    return `/admin/wp-${postType}s`;
+}
+
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
