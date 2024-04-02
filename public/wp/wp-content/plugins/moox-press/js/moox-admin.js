@@ -1,20 +1,12 @@
-wp.domReady(function () {
-    var registerPlugin = wp.plugins.registerPlugin;
-    var PluginMoreMenuItem = wp.editPost.PluginMoreMenuItem;
-    var __ = wp.i18n.__;
-
-    var CustomBackLink = function () {
-        return React.createElement(
-            PluginMoreMenuItem,
-            {
-                icon: "admin-home",
-                href: "http://your-filament-app.com/resources/posts",
-            },
-            __("Back to Filament", "text-domain")
-        );
-    };
-
-    registerPlugin("custom-back-link", {
-        render: CustomBackLink,
-    });
-});
+(function updateBackLink() {
+    const backLink = document.querySelector(
+        '.edit-post-fullscreen-mode-close[href*="edit.php?post_type=post"]'
+    );
+    if (backLink) {
+        backLink.href = "/admin/wp-posts";
+        backLink.setAttribute("aria-label", "Back to Moox");
+        backLink.title = "Back to Moox";
+    } else {
+        setTimeout(updateBackLink, 500);
+    }
+})();
