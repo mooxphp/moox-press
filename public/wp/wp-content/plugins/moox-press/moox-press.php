@@ -81,7 +81,7 @@ function enqueue_moox_admin_script()
         'moox-admin-js',
         plugin_dir_url(__FILE__).'/js/moox-admin.js',
         ['wp-element', 'wp-components', 'wp-edit-post'],
-        filemtime(plugin_dir_url(__FILE__).'/js/custom-admin.js'),
+        filemtime(plugin_dir_path(__FILE__).'js/moox-admin.js'),
         true
     );
 }
