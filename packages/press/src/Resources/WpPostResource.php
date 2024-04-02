@@ -18,6 +18,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Moox\Press\Models\WpPost;
 use Moox\Press\Resources\WpPostResource\Pages;
+use Moox\Press\Resources\WpPostResource\RelationManagers\WpCommentRelationManager;
 use Moox\Press\Resources\WpPostResource\RelationManagers\WpPostMetaRelationManager;
 
 class WpPostResource extends Resource
@@ -378,6 +379,7 @@ class WpPostResource extends Resource
     {
         return [
             WpPostMetaRelationManager::class,
+            WpCommentRelationManager::class,
         ];
     }
 
