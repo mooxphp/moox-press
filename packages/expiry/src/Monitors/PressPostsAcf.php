@@ -25,12 +25,13 @@ class PressPostsAcf
     {
         $model = \Moox\Press\Models\WpPostMeta::class;
 
+        $model = \Moox\Press\Models\WpPostMeta::class;
+
         $query = $model::query();
 
-        $expiringRecords = $query->where('meta_key', 'LIKE', '%_expired')->get();
+        $expiringRecords = $query->where('meta_key', 'LIKE', '%_gultig_bis')->get();
 
         $expiredRecords = $expiringRecords->filter(function ($record) {
-
             if ($record instanceof \Moox\Press\Models\WpPostMeta) {
                 $dateString = substr($record->meta_value, -8);
                 if (preg_match("/\d{8}/", $dateString)) {
@@ -45,13 +46,48 @@ class PressPostsAcf
 
         return $expiredRecords;
 
-        // needs to be an array of
-        // - post_id
-        // - Titel
-        // 2701123	31532	downloads_0_download-rubrik_1_download-titel	WRAS Zertifikat
-        // 2701127	31532	downloads_0_download-rubrik_1_gultig_bis	20230228
-        // - link to the post
-        // - notification to
+        foreach ($expiredRecords as $record) {
+            // ID
+            echo $record->post_id;
+
+            // TITLE
+            $metaKeyTitle = str_replace(
+                '_gultig_bis',
+                '_download-titel',
+                $record->meta_key
+            );
+
+            $titleRecord = $record->post
+                ->meta()
+                ->where('meta_key', $metaKeyTitle)
+                ->first();
+            //if ($titleRecord) {
+            // echo $titleRecord->meta_value;
+            //}
+
+            // LINK
+            echo "/post/{$record->post->post_name}";
+
+            // AUTHOR
+            //if ($record->post->author) {
+            //echo $record->post->author->ID;
+            //}
+            // ACF-NOTIFY - TODO
+
+            // ALL FIELDS
+            // title
+            // slug
+            // item (model, field - notation?)
+            // link
+            // Expired at
+            // Notified at
+            // Notified to
+            // Escalated at
+            // Escalated to
+            // Handled by -
+            // Done -
+            // Expiry Monitor : Press Posts ACF
+        }
 
     }
 
