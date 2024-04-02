@@ -61,8 +61,13 @@ class WpPost extends Model
         'post_modified_gmt' => 'datetime',
     ];
 
-    public function postMeta()
+    public function meta()
     {
-        return $this->hasMany(WpPostMeta::class, 'post_id');
+        return $this->hasMany(\Moox\Press\Models\WpPostMeta::class, 'post_id', 'ID');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'post_author', 'ID'); // Adjust User model path as needed
     }
 }

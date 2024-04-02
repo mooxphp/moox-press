@@ -5,6 +5,9 @@ namespace Moox\Press\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string $meta_value
+ */
 class WpPostMeta extends Model
 {
     use HasFactory;
@@ -24,5 +27,10 @@ class WpPostMeta extends Model
         parent::__construct($attributes);
         $this->wpPrefix = config('press.wordpress_prefix');
         $this->table = $this->wpPrefix.'postmeta';
+    }
+
+    public function post()
+    {
+        return $this->belongsTo(WpPost::class, 'post_id', 'ID');
     }
 }
