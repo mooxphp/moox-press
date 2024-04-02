@@ -2,7 +2,7 @@
 
 namespace Moox\Press\Resources\WpPostResource\Pages;
 
-use Filament\Actions\CreateAction;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\ListRecords;
 use Moox\Press\Resources\WpPostResource;
 
@@ -12,6 +12,6 @@ class ListWpPosts extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return [CreateAction::make()];
+        return [Action::make('new-post')->label('New Post')->url('/wp/wp-admin/post-new.php')];
     }
 }

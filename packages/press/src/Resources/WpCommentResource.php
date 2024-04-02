@@ -21,7 +21,7 @@ class WpCommentResource extends Resource
 {
     protected static ?string $model = WpComment::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
 
     protected static ?string $recordTitleAttribute = 'comment_author';
 
