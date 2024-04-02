@@ -33,7 +33,6 @@ class WpComment extends Model
 
     protected $searchableFields = ['*'];
 
-
     protected $casts = [
         'comment_date' => 'datetime',
         'comment_date_gmt' => 'datetime',

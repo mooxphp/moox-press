@@ -2,11 +2,10 @@
 
 namespace Moox\Press;
 
-use Filament\Panel;
 use Filament\Contracts\Plugin;
-use Moox\Press\Resources\WpTermMetaResource;
-use Moox\Press\Resources\WpUserMetaResource;
+use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
+use Moox\Press\Resources\WpTermMetaResource;
 
 class WpTermMetaPlugin implements Plugin
 {
