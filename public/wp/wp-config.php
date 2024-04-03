@@ -27,6 +27,7 @@ define('LOGGED_IN_SALT', $_ENV['WP_LOGGED_IN_SALT']);
 define('NONCE_SALT', $_ENV['WP_NONCE_SALT']);
 
 define('MOOX_HASH', $_ENV['APP_KEY']);
+define('ADMIN_SLUG', isset($_ENV['ADMIN_SLUG']) ? $_ENV['ADMIN_SLUG'] : '/admin');
 
 define('LOCK_WP', isset($_ENV['LOCK_WP']) ? $_ENV['LOCK_WP'] : false);
 define('AUTH_WP', isset($_ENV['AUTH_WP']) ? $_ENV['AUTH_WP'] : false);
