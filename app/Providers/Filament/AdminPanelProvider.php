@@ -71,7 +71,7 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Press\WpTermTaxonomyPlugin::make(),
                 \Moox\Press\WpCommentMetaPlugin::make(),
                 \Moox\Press\WpCommentPlugin::make(),
-            
+
                 \Moox\Jobs\JobsPlugin::make(),
                 \Moox\Jobs\JobsWaitingPlugin::make(),
                 \Moox\Jobs\JobsFailedPlugin::make(),
