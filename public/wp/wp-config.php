@@ -29,11 +29,15 @@ define('NONCE_SALT', $_ENV['WP_NONCE_SALT']);
 define('MOOX_HASH', $_ENV['APP_KEY']);
 
 define('LOCK_WP', isset($_ENV['LOCK_WP']) ? $_ENV['LOCK_WP'] : false);
-define('HIDE_LOGIN', isset($_ENV['HIDE_LOGIN']) ? $_ENV['HIDE_LOGIN'] : false);
+define('AUTH_WP', isset($_ENV['AUTH_WP']) ? $_ENV['AUTH_WP'] : false);
+define('REDIRECT_INDEX', isset($_ENV['REDIRECT_INDEX']) ? $_ENV['REDIRECT_INDEX'] : false);
+define('REDIRECT_TO_WP', isset($_ENV['REDIRECT_TO_WP']) ? $_ENV['REDIRECT_TO_WP'] : false);
+define('REDIRECT_LOGIN', isset($_ENV['REDIRECT_LOGIN']) ? $_ENV['REDIRECT_LOGIN'] : false);
+define('REDIRECT_LOGOUT', isset($_ENV['REDIRECT_LOGOUT']) ? $_ENV['REDIRECT_LOGOUT'] : false);
 define('FORGOT_PASSWORD', isset($_ENV['FORGOT_PASSWORD']) ? $_ENV['FORGOT_PASSWORD'] : false);
-define('ENABLE_MFA', isset($_ENV['ENABLE_MFA']) ? $_ENV['ENABLE_MFA'] : false);
-define('REGISTRATION', isset($_ENV['REGISTRATION']) ? $_ENV['REGISTRATION'] : false);
 define('REDIRECT_EDITOR', isset($_ENV['REDIRECT_EDITOR']) ? $_ENV['REDIRECT_EDITOR'] : false);
+define('REGISTRATION', isset($_ENV['REGISTRATION']) ? $_ENV['REGISTRATION'] : false);
+define('ENABLE_MFA', isset($_ENV['ENABLE_MFA']) ? $_ENV['ENABLE_MFA'] : false);
 
 $table_prefix = isset($_ENV['WP_PREFIX']) ? $_ENV['WP_PREFIX'] : 'wp_';
 
