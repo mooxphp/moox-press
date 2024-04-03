@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $meta_value
+ * @property string $meta_key
  */
 class WpPostMeta extends Model
 {
