@@ -56,21 +56,27 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                \Moox\Press\WpUserPlugin::make(),
+
                 \Moox\Press\WpPostPlugin::make(),
-                \Moox\Press\WpMediaPlugin::make(),
+                \Moox\Press\WpCategoryPlugin::make(),
                 \Moox\Press\WpPagePlugin::make(),
-                \Moox\Press\WpPostMetaPlugin::make(),
-                \Moox\Press\WpUserMetaPlugin::make(),
+                \Moox\Press\WpMediaPlugin::make(),
+                \Moox\Press\WpCommentPlugin::make(),
+                \Moox\Press\WpTagPlugin::make(),
+
+                \Moox\Press\WpUserPlugin::make(),
                 \Moox\Press\WpOptionPlugin::make(),
-                \Moox\Expiry\ExpiryPlugin::make(),
-                \Moox\Expiry\ExpiryMonitorPlugin::make(),
+
+                \Moox\Press\WpPostMetaPlugin::make(),
+                \Moox\Press\WpCommentMetaPlugin::make(),
+                \Moox\Press\WpUserMetaPlugin::make(),
                 \Moox\Press\WpTermMetaPlugin::make(),
                 \Moox\Press\WpTermRelationshipPlugin::make(),
                 \Moox\Press\WpTermPlugin::make(),
                 \Moox\Press\WpTermTaxonomyPlugin::make(),
-                \Moox\Press\WpCommentMetaPlugin::make(),
-                \Moox\Press\WpCommentPlugin::make(),
+
+                \Moox\Expiry\ExpiryPlugin::make(),
+                \Moox\Expiry\ExpiryMonitorPlugin::make(),
 
                 \Moox\Jobs\JobsPlugin::make(),
                 \Moox\Jobs\JobsWaitingPlugin::make(),
