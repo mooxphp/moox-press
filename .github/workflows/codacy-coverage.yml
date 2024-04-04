@@ -19,19 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download artifact
-        uses: actions/github-script@v6
-        continue-on-error: true
-        env:
-          WORKFLOW_FILENAME: testing.yml
-          ARTIFACT_NAME: coverage-report
-          ARTIFACT_FILENAME: clover.xml
-          UNZIP_DIR: tests
-        with:
-          script: |
-            const script = require('./scripts/download-previous-artifact.js')
-            await script({github, context, core})
-
+      # download artifact clover.xml somehow
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
