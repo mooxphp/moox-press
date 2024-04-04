@@ -21,7 +21,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-     - name: Download clover.xml artifact
+      - name: Download clover.xml artifact
         uses: actions/download-artifact@v4
         with:
           name: clover
