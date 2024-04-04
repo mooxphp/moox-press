@@ -2,7 +2,7 @@ name: Codacy coverage
 
 on:
   workflow_run:
-    workflows: ["Pest Workflow"]
+    workflows: ["Pest"]
     branches:
       - main
     types:
