@@ -103,11 +103,12 @@ jobs:
           api-token: ${{ secrets.CODACY }}
           coverage-reports: clover.xml
 
-      - name: Save Clover XML artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage
+       - name: 'Upload Artifact'
+         uses: actions/upload-artifact@v4
+         with:
+          name: clover
           path: clover.xml
+          retention-days: 2
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v2

@@ -21,11 +21,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download Clover XML artifact
+     - name: Download clover.xml artifact
         uses: actions/download-artifact@v4
         with:
-          name: coverage
-          path:
+          name: clover
 
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
