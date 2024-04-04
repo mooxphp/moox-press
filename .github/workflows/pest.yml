@@ -15,8 +15,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: moox-press
-          MYSQL_USER: user
-          MYSQL_PASSWORD: password
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping -h localhost" --health-interval=10s --health-timeout=5s --health-retries=5
@@ -24,7 +22,7 @@ jobs:
       SESSION_DRIVER: array
       DB_CONNECTION: mysql
       DB_DATABASE: moox-press
-      DB_USERNAME: user
+      DB_USERNAME: root
       DB_PASSWORD: password
       DB_HOST: 127.0.0.1
       DB_PORT: 3306
@@ -43,6 +41,17 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Get MySQL IP
+        id: get_mysql_ip
+        run: |
+          MYSQL_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -q --filter ancestor=mysql:latest))
+          echo "::set-output name=mysql_ip::$MYSQL_IP"
+
+      - name: Dump SQL
+        run: |
+          MYSQL_IP=${{ steps.get_mysql_ip.outputs.mysql_ip }}
+          mysql -u root -h $MYSQL_IP -p$DB_PASSWORD $DB_DATABASE < moox-press.sql
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
