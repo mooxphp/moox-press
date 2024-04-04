@@ -57,16 +57,19 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
 
+                // Moox Press
                 \Moox\Press\WpPostPlugin::make(),
-                \Moox\Press\WpCategoryPlugin::make(),
                 \Moox\Press\WpPagePlugin::make(),
                 \Moox\Press\WpMediaPlugin::make(),
-                \Moox\Press\WpCommentPlugin::make(),
+                \Moox\Press\WpCategoryPlugin::make(),
                 \Moox\Press\WpTagPlugin::make(),
+                \Moox\Press\WpCommentPlugin::make(),
 
+                // Moox Press Admin
                 \Moox\Press\WpUserPlugin::make(),
                 \Moox\Press\WpOptionPlugin::make(),
 
+                // Moox Press Meta (optional)
                 \Moox\Press\WpPostMetaPlugin::make(),
                 \Moox\Press\WpCommentMetaPlugin::make(),
                 \Moox\Press\WpUserMetaPlugin::make(),
@@ -75,9 +78,11 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Press\WpTermPlugin::make(),
                 \Moox\Press\WpTermTaxonomyPlugin::make(),
 
+                // Moox Expiry
                 \Moox\Expiry\ExpiryPlugin::make(),
                 \Moox\Expiry\ExpiryMonitorPlugin::make(),
 
+                // Moox Jobs
                 \Moox\Jobs\JobsPlugin::make(),
                 \Moox\Jobs\JobsWaitingPlugin::make(),
                 \Moox\Jobs\JobsFailedPlugin::make(),
