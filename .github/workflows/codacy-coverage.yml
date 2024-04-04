@@ -24,7 +24,7 @@ jobs:
       - name: Download clover.xml artifact
         uses: actions/download-artifact@v4
         with:
-          name: clover
+          name: coverage-report
 
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
