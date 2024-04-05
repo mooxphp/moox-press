@@ -2,22 +2,24 @@
 
 namespace Moox\Press\Resources;
 
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Actions\DeleteBulkAction;
-use Filament\Tables\Actions\EditAction;
-use Filament\Tables\Actions\ViewAction;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Moox\Press\Models\WpUser;
-use Moox\Press\Resources\WpUserResource\Pages\CreateWpUser;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Section;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ViewAction;
+use Filament\Forms\Components\TextInput;
+use Illuminate\Validation\Rules\Password;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Tables\Actions\DeleteBulkAction;
+use Moox\Press\Helper\PasswordHash;
 use Moox\Press\Resources\WpUserResource\Pages\EditWpUser;
-use Moox\Press\Resources\WpUserResource\Pages\ListWpUsers;
 use Moox\Press\Resources\WpUserResource\Pages\ViewWpUser;
+use Moox\Press\Resources\WpUserResource\Pages\ListWpUsers;
+use Moox\Press\Resources\WpUserResource\Pages\CreateWpUser;
 use Moox\Press\Resources\WpUserResource\RelationManagers\WpUserMetaRelationManager;
 
 class WpUserResource extends Resource
@@ -60,15 +62,6 @@ class WpUserResource extends Resource
                             'lg' => 12,
                         ]),
 
-                    TextInput::make('user_pass')
-                        ->rules(['max:255', 'string'])
-                        ->required()
-                        ->placeholder('User Pass')
-                        ->columnSpan([
-                            'default' => 12,
-                            'md' => 12,
-                            'lg' => 12,
-                        ]),
 
                     TextInput::make('user_nicename')
                         ->rules(['max:50', 'string'])
@@ -153,8 +146,73 @@ class WpUserResource extends Resource
                             'lg' => 12,
                         ]),
 
+                    TextInput::make('user_pass')
+                        ->revealable()
+                        ->label('Password')
+                        ->password()
+                        ->visibleOn('create')
+                        ->dehydrateStateUsing(function ($state) {
+                            $passwordHash = new PasswordHash(8, true);
+                            return $passwordHash->HashPassword($state);
+                        })
+                        ->rule(Password::min(8))
+                        ->required()
+                        ->placeholder('Password')
+                        ->columnSpan([
+                            'default' => 12,
+                            'md' => 12,
+                            'lg' => 12,
+                        ]),
+
+                    TextInput::make('password_confirmation')
+                        ->requiredWith('user_pass')
+                        ->password()
+                        ->same('user_pass')
+                        ->visibleOn('create')
+                        ->placeholder('Password Confirmation')
+                        ->columnSpan([
+                            'default' => 12,
+                            'md' => 12,
+                            'lg' => 12,
+                        ]),
+
                 ]),
             ]),
+
+            Section::make('Update Password')->schema([
+                Grid::make(['default' => 0])->schema([
+                    TextInput::make('current_password')
+                        ->revealable()
+                        ->password()
+                        ->rule('current_password')
+                        ->columnSpan([
+                            'default' => 12,
+                            'md' => 12,
+                            'lg' => 12,
+                        ]),
+                    TextInput::make('new_password')
+                        ->revealable()
+                        ->password()
+                        ->rule(Password::min(8))
+                        // ->helperText('Your password must be at least 8 characters long and contain a mix of uppercase and lowercase letters, numbers, and symbols.')
+                        ->columnSpan([
+                            'default' => 12,
+                            'md' => 12,
+                            'lg' => 12,
+                        ]),
+                    TextInput::make('new_password_confirmation')
+                        ->password()
+                        ->label('Confirm new password')
+                        ->same('new_password')
+                        ->requiredWith('new_password')
+                        ->columnSpan([
+                            'default' => 12,
+                            'md' => 12,
+                            'lg' => 12,
+                        ]),
+
+                ]),
+            ])->visibleOn('edit'),
         ]);
     }
 
