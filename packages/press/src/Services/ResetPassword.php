@@ -19,7 +19,6 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password as PasswordRule;
@@ -58,7 +57,7 @@ class ResetPassword extends SimplePage
         $this->token = $token ?? request()->query('token');
 
         $this->form->fill([
-            'email' =>  $email ?? request()->query('email'),
+            'email' => $email ?? request()->query('email'),
         ]);
     }
 
@@ -89,7 +88,7 @@ class ResetPassword extends SimplePage
 
         $status = Password::broker(Filament::getAuthPasswordBroker())->reset(
             $data,
-            function (CanResetPassword | Model | Authenticatable $user) use ($data) {
+            function (CanResetPassword|Model|Authenticatable $user) use ($data) {
                 $passwordHash = new PasswordHash(8, true);
                 $user->forceFill([
                     'user_pass' => $passwordHash->HashPassword($data['password']),
@@ -157,12 +156,12 @@ class ResetPassword extends SimplePage
             ->dehydrated(false);
     }
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
         return __('filament-panels::pages/auth/password-reset/reset-password.title');
     }
 
-    public function getHeading(): string | Htmlable
+    public function getHeading(): string|Htmlable
     {
         return __('filament-panels::pages/auth/password-reset/reset-password.heading');
     }

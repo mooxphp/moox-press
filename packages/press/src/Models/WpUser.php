@@ -18,7 +18,8 @@ use Moox\Press\Database\Factories\WpUserFactory;
  */
 class WpUser extends Authenticatable implements FilamentUser
 {
-    use HasFactory; use Notifiable;
+    use HasFactory;
+    use Notifiable;
 
     public function userMeta()
     {
