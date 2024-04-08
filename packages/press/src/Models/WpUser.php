@@ -7,6 +7,7 @@ use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Moox\Press\Database\Factories\WpUserFactory;
 
 /**
@@ -17,7 +18,7 @@ use Moox\Press\Database\Factories\WpUserFactory;
  */
 class WpUser extends Authenticatable implements FilamentUser
 {
-    use HasFactory;
+    use HasFactory; use Notifiable;
 
     public function userMeta()
     {

@@ -18,6 +18,8 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Moox\Press\Services\Login;
+use Moox\Press\Services\RequestPasswordReset;
+use Moox\Press\Services\ResetPassword;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -27,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->passwordReset(RequestPasswordReset::class, ResetPassword::class)
             ->login(Login::class)
             ->colors([
                 'primary' => Color::hex('#005D9D'),
