@@ -2,7 +2,7 @@
 /**
  * Title: Newsletter landing
  * Slug: twentytwentyfour/page-newsletter-landing
- * Categories: call-to-action, page, featured
+ * Categories: call-to-action, twentytwentyfour_page, featured
  * Keywords: starter
  * Block Types: core/post-content
  * Post Types: page, wp_template
@@ -16,7 +16,7 @@
 	<div class="wp-block-group">
 		<!-- wp:image {"align":"center","width":"45px","height":"49px","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
 		<figure class="wp-block-image aligncenter size-full is-resized">
-			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icon-message.webp" alt="" style="object-fit:cover;width:45px;height:49px" />
+			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/icon-message.webp" alt="" style="object-fit:cover;width:45px;height:49px" />
 		</figure>
 		<!-- /wp:image -->
 
@@ -25,7 +25,7 @@
 		<!-- /wp:spacer -->
 
 		<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"right":"0","left":"0"},"padding":{"right":"0","left":"0"}},"elements":{"link":{"color":{"text":"var:preset|color|contrast"}}}},"textColor":"contrast","fontSize":"x-large"} -->
-		<h2 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-link-color has-x-large-font-size" style="margin-right:0;margin-left:0;padding-right:0;padding-left:0"><?php echo esc_html_x('Subscribe to the newsletter and stay connected with our community', 'sample content for newsletter subscription', 'twentytwentyfour'); ?></h2>
+		<h2 class="wp-block-heading has-text-align-center has-contrast-color has-text-color has-link-color has-x-large-font-size" style="margin-right:0;margin-left:0;padding-right:0;padding-left:0"><?php echo esc_html_x( 'Subscribe to the newsletter and stay connected with our community', 'sample content for newsletter subscription', 'twentytwentyfour' ); ?></h2>
 		<!-- /wp:heading -->
 
 		<!-- wp:spacer {"height":"var:preset|spacing|10"} -->
@@ -36,7 +36,7 @@
 		<div class="wp-block-buttons">
 			<!-- wp:button -->
 			<div class="wp-block-button">
-				<a class="wp-block-button__link wp-element-button"><?php echo esc_html_x('Sign up', 'Sample content for newsletter subscribe button', 'twentytwentyfour'); ?></a>
+				<a class="wp-block-button__link wp-element-button"><?php echo esc_html_x( 'Sign up', 'Sample content for newsletter subscribe button', 'twentytwentyfour' ); ?></a>
 			</div>
 			<!-- /wp:button -->
 		</div>
