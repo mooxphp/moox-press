@@ -1,7 +1,8 @@
 <?php
+
 $userId = 1;
 $user = Moox\Press\Models\WpUser::find($userId);
-$prefix = "tyar9_";
+$prefix = 'tyar9_';
 
 // The WordPress users table lacks some features, most packages working with users rely on, these are provided by the model, stored as WordPress-compatible usermeta
 
@@ -25,12 +26,12 @@ var_dump($user->moox_user_attachment_id);
 
 // All other fields are accesible like so
 
-var_dump($user->meta("capabilities"));
+var_dump($user->meta('capabilities'));
 // if the meta key is prefixed also available as
-var_dump($user->meta($prefix . "capabilities"));
+var_dump($user->meta($prefix.'capabilities'));
 // like these often needed prefixed keys
-var_dump($user->meta($prefix . "user_level"));
-var_dump($user->meta($prefix . "user-settings"));
-var_dump($user->meta($prefix . "user-settings-time"));
-var_dump($user->meta($prefix . "media_library_mode"));
-var_dump($user->meta($prefix . "dashboard_quick_press_last_post_id"));
+var_dump($user->meta($prefix.'user_level'));
+var_dump($user->meta($prefix.'user-settings'));
+var_dump($user->meta($prefix.'user-settings-time'));
+var_dump($user->meta($prefix.'media_library_mode'));
+var_dump($user->meta($prefix.'dashboard_quick_press_last_post_id'));
