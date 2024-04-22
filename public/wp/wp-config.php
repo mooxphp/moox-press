@@ -2,7 +2,7 @@
 
 use Dotenv\Dotenv;
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 $dotenv = Dotenv::createImmutable(__DIR__.'/../../');
 $dotenv->load();
@@ -42,7 +42,11 @@ define('ENABLE_MFA', isset($_ENV['ENABLE_MFA']) ? $_ENV['ENABLE_MFA'] : false);
 
 $table_prefix = isset($_ENV['WP_PREFIX']) ? $_ENV['WP_PREFIX'] : 'wp_';
 
-$wp_debug = isset($_ENV['WP_DEBUG']) ? $_ENV['WP_DEBUG'] : false;
+if ($_ENV['WP_DEBUG'] === 'true') {
+    $wp_debug = true;
+} else {
+    $wp_debug = false;
+}
 
 define('WP_DEBUG', $wp_debug);
 
