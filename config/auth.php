@@ -39,6 +39,7 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'wpusers',
+            'remember' => 20160, // 14 days like in WordPress
         ],
     ],
 
