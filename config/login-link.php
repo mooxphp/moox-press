@@ -7,4 +7,5 @@ return [
         'App Users' => \App\Models\User::class,
         'Moox WpUsers' => \Moox\Press\Models\WpUser::class,
     ],
+    'redirect_to' => '/admin',
 ];
