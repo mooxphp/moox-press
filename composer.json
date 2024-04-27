@@ -20,7 +20,10 @@
         "moox/core": "^1.0",
         "moox/expiry": "*",
         "moox/jobs": "^3.0",
-        "moox/press": "*"
+        "moox/press": "*",
+        "moox/user-device": "*",
+        "moox/user-session": "*",
+        "moox/login-link": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",

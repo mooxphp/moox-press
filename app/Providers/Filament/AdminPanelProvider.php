@@ -95,6 +95,11 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Jobs\JobsFailedPlugin::make(),
                 \Moox\Jobs\JobsBatchesPlugin::make(),
 
+                // Moox User
+                \Moox\UserDevice\UserDevicePlugin::make(),
+                \Moox\UserSession\UserSessionPlugin::make(),
+                \Moox\LoginLink\LoginLinkPlugin::make(),
+
             ]);
     }
 }
