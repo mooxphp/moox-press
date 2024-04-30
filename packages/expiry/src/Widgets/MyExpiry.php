@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Widgets;
+namespace Moox\Expiry\Widgets;
 
 use Filament\Tables;
 use Filament\Tables\Actions\Action;

@@ -16,6 +16,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Moox\Expiry\Widgets\MyExpiry;
 use Moox\Press\Services\Login;
 use Moox\Press\Services\RequestPasswordReset;
 use Moox\Press\Services\ResetPassword;
@@ -40,6 +41,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                MyExpiry::class,
             ])
             ->middleware([
                 EncryptCookies::class,
