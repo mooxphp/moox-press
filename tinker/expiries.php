@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Moox\Press\Models\WpPost;
 
 $expiries = DB::table('tyar9_postmeta')
