@@ -86,7 +86,6 @@ class AdminPanelProvider extends PanelProvider
 
                 // Moox Expiry
                 \Moox\Expiry\ExpiryPlugin::make(),
-                \Moox\Expiry\ExpiryMonitorPlugin::make(),
 
                 // Moox Jobs
                 \Moox\Jobs\JobsPlugin::make(),

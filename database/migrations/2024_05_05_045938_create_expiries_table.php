@@ -1,11 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -25,7 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('escalated_to')->nullable();
             $table->unsignedBigInteger('handled_by')->nullable();
             $table->dateTime('done_at')->nullable();
-            $table->unsignedBigInteger('expiry_monitor_id');
+            $table->string('expiry_job');
 
             $table->timestamps();
             $table->softDeletes();

@@ -86,7 +86,6 @@ class GetExpiredJob implements ShouldQueue
             }
         }
 
-        // Delete any expiries that were not processed in this job.
         Expiry::whereNotIn('meta_id', $relevantMetaIds)->delete();
 
         $this->setProgress(100);
@@ -112,7 +111,7 @@ class GetExpiredJob implements ShouldQueue
                 'slug' => $post->post_name,
                 'link' => $baseHref.$post->ID,
                 'notified_to' => $post->post_author,
-                'expiry_monitor_id' => 1,
+                'expiry_job' => 'Wiki Dokumente',
             ];
 
             Expiry::updateOrCreate(['meta_id' => $meta->meta_id], $expiryData);

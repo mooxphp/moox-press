@@ -33,26 +33,28 @@ class MyExpiry extends BaseWidget
                     ->limit(50),
                 Tables\Columns\TextColumn::make('expired_at')
                     ->toggleable()
+                    ->sortable()
                     ->since(),
                 Tables\Columns\TextColumn::make('escalated_at')
                     ->label('Escalate at')
                     ->toggleable()
+                    ->sortable()
                     ->since(),
                 Tables\Columns\TextColumn::make('escalated_to')
                     ->label('Escalate to')
                     ->toggleable()
+                    ->sortable()
                     ->searchable()
                     ->limit(50),
-                Tables\Columns\TextColumn::make('expiryMonitor.title')
+                Tables\Columns\TextColumn::make('expiry_job')
                     ->toggleable()
+                    ->sortable()
+                    ->searchable()
                     ->limit(50),
             ])
             ->filters([
-                SelectFilter::make('expiry_monitor_id')
-                    ->relationship('expiryMonitor', 'title')
-                    ->indicator('ExpiryMonitor')
-                    ->multiple()
-                    ->label('ExpiryMonitor'),
+                SelectFilter::make('expiry_job')
+                    ->label('Expiry Job'),
             ])
             ->actions([
                 Action::make('View')->url(fn ($record): string => "{$record->link}"),
