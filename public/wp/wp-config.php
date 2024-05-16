@@ -42,13 +42,11 @@ define('ENABLE_MFA', isset($_ENV['ENABLE_MFA']) ? $_ENV['ENABLE_MFA'] : false);
 
 $table_prefix = isset($_ENV['WP_PREFIX']) ? $_ENV['WP_PREFIX'] : 'wp_';
 
-if ($_ENV['WP_DEBUG'] === 'true') {
-    $wp_debug = true;
-} else {
-    $wp_debug = false;
-}
+define('WP_DEBUG', ($_ENV['WP_DEBUG'] === 'true' ? true : false));
+define('WP_DEBUG_LOG', ($_ENV['WP_DEBUG_LOG'] === 'true' ? true : false));
+define('WP_DEBUG_DISPLAY', ($_ENV['WP_DEBUG_DISPLAY'] === 'true' ? true : false));
 
-define('WP_DEBUG', $wp_debug);
+define('WP_MEMORY_LIMIT', ($_ENV['WP_MEMORY_LIMIT'] ? $_ENV['WP_MEMORY_LIMIT'] : '512M'));
 
 if (! defined('ABSPATH')) {
     define('ABSPATH', __DIR__.'/');
