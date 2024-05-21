@@ -18,6 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('meta_id')->nullable();
             $table->string('link');
+            $table->string('expiry_job');
+            $table->string('category')->nullable();
+            $table->string('status')->nullable();
             $table->dateTime('expired_at');
             $table->dateTime('notified_at')->nullable();
             $table->unsignedBigInteger('notified_to')->nullable();
@@ -25,7 +28,6 @@ return new class extends Migration
             $table->unsignedBigInteger('escalated_to')->nullable();
             $table->unsignedBigInteger('handled_by')->nullable();
             $table->dateTime('done_at')->nullable();
-            $table->string('expiry_job');
 
             $table->timestamps();
             $table->softDeletes();
