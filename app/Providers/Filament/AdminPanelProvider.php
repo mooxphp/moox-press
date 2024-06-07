@@ -67,9 +67,13 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Press\WpTagPlugin::make(),
                 \Moox\Press\WpCommentPlugin::make(),
 
-                // Moox Press Custom
+                // Moox Press Wiki
                 \Moox\Press\WpWikiPlugin::make(),
                 \Moox\Press\WpThemaPlugin::make(),
+
+                // Moox Press Schulung
+                \Moox\Press\WpSchulungPlugin::make(),
+                \Moox\Press\WpRubrikPlugin::make(),
 
                 // Moox Press Admin
                 \Moox\Press\WpUserPlugin::make(),
