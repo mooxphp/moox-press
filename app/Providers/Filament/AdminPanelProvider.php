@@ -74,6 +74,7 @@ class AdminPanelProvider extends PanelProvider
                 // Moox Press Schulung
                 \Moox\Press\WpSchulungPlugin::make(),
                 \Moox\Press\WpRubrikPlugin::make(),
+                \Moox\Training\TrainingPlugin::make(),
 
                 // Moox Press Admin
                 \Moox\Press\WpUserPlugin::make(),
@@ -101,6 +102,11 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\UserDevice\UserDevicePlugin::make(),
                 \Moox\UserSession\UserSessionPlugin::make(),
                 \Moox\LoginLink\LoginLinkPlugin::make(),
+
+            
+                \Moox\Training\TrainingInvitationPlugin::make(),
+                \Moox\Training\TrainingDatePlugin::make(),
+                \Moox\Training\TrainingTypePlugin::make(),
 
             ]);
     }
