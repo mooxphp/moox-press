@@ -103,7 +103,6 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\UserSession\UserSessionPlugin::make(),
                 \Moox\LoginLink\LoginLinkPlugin::make(),
 
-            
                 \Moox\Training\TrainingInvitationPlugin::make(),
                 \Moox\Training\TrainingDatePlugin::make(),
                 \Moox\Training\TrainingTypePlugin::make(),
