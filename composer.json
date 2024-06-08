@@ -22,7 +22,8 @@
         "moox/press": "*",
         "moox/user-device": "*",
         "moox/user-session": "*",
-        "moox/login-link": "*"
+        "moox/login-link": "*",
+        "moox/trainings": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
