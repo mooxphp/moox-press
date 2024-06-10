@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content')->nullable();
-            $table->dateTime('sent_at')->nullable();
+            $table->string('status');
 
             $table->timestamps();
         });
