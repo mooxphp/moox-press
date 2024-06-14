@@ -17,7 +17,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('training_types')
                 ->onUpdate('CASCADE')
-                ->onDelete('CASCADE');
+                ->onDelete('RESTRICT');
         });
     }
 
