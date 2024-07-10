@@ -6,4 +6,5 @@ return [
 
     'user_model' => \Moox\Press\Models\WpUser::class,
     'default_notified_to' => 1,
+    'api' => true,
 ];
