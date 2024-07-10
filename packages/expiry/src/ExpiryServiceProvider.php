@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Moox\Expiry;
 
 use Moox\Expiry\Commands\InstallCommand;
-use Moox\Expiry\Http\Controllers\Api\ExpiryController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Illuminate\Support\Facades\Route;
 
 class ExpiryServiceProvider extends PackageServiceProvider
 {
@@ -26,6 +24,6 @@ class ExpiryServiceProvider extends PackageServiceProvider
 
     public function packageRegistered()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
     }
 }
