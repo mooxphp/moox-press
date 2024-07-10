@@ -18,7 +18,7 @@ class ExpiryController extends Controller
         return Expiry::findOrFail($id);
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $expiry = Expiry::create($request->all());
 
@@ -38,5 +38,15 @@ class ExpiryController extends Controller
         Expiry::destroy($id);
 
         return response()->json(null, 204);
+    }
+
+    public function count()
+    {
+        return Expiry::all()->count();
+    }
+
+    public function countForUser($user)
+    {
+        return Expiry::where('notified_to', $user)->count();
     }
 }
