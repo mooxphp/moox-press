@@ -18,7 +18,6 @@ return [
         'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
     ],
 
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards

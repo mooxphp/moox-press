@@ -107,7 +107,6 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Training\TrainingDatePlugin::make(),
                 \Moox\Training\TrainingTypePlugin::make(),
 
-            
                 \Moox\Security\SecurityPlugin::make(),
                 \Moox\Security\ResetPasswordPlugin::make(),
 

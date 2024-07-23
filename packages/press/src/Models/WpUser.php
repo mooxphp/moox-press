@@ -154,7 +154,6 @@ class WpUser extends Authenticatable implements FilamentUser
         $this->addOrUpdateMeta('display_name', $value);
     }
 
-
     public function getNicknameAttribute()
     {
         return $this->getMeta('nickname') ?? null;
