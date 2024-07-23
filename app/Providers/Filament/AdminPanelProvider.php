@@ -17,9 +17,9 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Moox\Expiry\Widgets\MyExpiry;
-use Moox\Press\Services\Login;
-use Moox\Press\Services\RequestPasswordReset;
-use Moox\Press\Services\ResetPassword;
+use Moox\Security\Services\Login;
+use Moox\Security\Services\RequestPasswordReset;
+use Moox\Security\Services\ResetPassword;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -106,6 +106,10 @@ class AdminPanelProvider extends PanelProvider
                 \Moox\Training\TrainingInvitationPlugin::make(),
                 \Moox\Training\TrainingDatePlugin::make(),
                 \Moox\Training\TrainingTypePlugin::make(),
+
+            
+                \Moox\Security\SecurityPlugin::make(),
+                \Moox\Security\ResetPasswordPlugin::make(),
 
             ]);
     }

@@ -19,11 +19,12 @@
         "laravel/tinker": "^2.9",
         "moox/expiry": "*",
         "moox/jobs": "*",
-        "moox/press": "*",
-        "moox/user-device": "*",
-        "moox/user-session": "*",
         "moox/login-link": "*",
-        "moox/trainings": "*"
+        "moox/press": "*",
+        "moox/security": "^0.0.1",
+        "moox/trainings": "*",
+        "moox/user-device": "*",
+        "moox/user-session": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
