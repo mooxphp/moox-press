@@ -30,9 +30,9 @@
     <br>
 </p>
 
-# Moox Press Monorepo
+# Moox Press Monorepo - ARCHIVE
 
-Welcome to the Moox project. This is the Moox Press Monorepo. It is an installable Laravel App meant for development of our Filament Plugins aka Laravel Packages to connect with WordPress. We are in an early stage of development ...
+Welcome to the Moox project. This is the OLD Moox Press Monorepo. It is not used anymore, as Moox Press is now part of [the mooxphp/moox monorepo](https://github.com/mooxphp/moox). 
 
 ## Packages
 
